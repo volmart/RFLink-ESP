@@ -475,7 +475,7 @@ class _RFL_Protocol_Oregon : public _RFL_Protocol_BaseClass
                 reportSerial(orscV2);
                 found=2;
              } 
-             
+
              if (orscV3.nextPulse(p)) { 
                 reportSerial(orscV3);
                 found=3;
@@ -959,18 +959,29 @@ class _RFL_Protocol_Oregon : public _RFL_Protocol_BaseClass
         Serial.println(";");  
       } else  
       // ==================================================================================
-      // 0x1a* / 0x2a* 0x3a** Power meter: OWL CM119
+      // 0x1a* / 0x2a* 0x3a** Power meter: OWL CM119, CM160
       // ==================================================================================
-      // 0x628* Power meter: OWL CM180
-      // ==================================================================================
-      if( (id & 0xFF00) == 0x1A00 || (id & 0xFF00) == 0x2A00 || (id & 0xFF00) == 0x3A00 ) { 
+      if((rc == 0x20) || (rc == 0x21) || (rc == 0x22) || (rc == 0x23) || (rc == 0x24))
+      { 
         Serial.print("20;");
         PrintHexByte(PKSequenceNumber++);
         // ----------------------------------
-        Serial.print(F(";Oregon OWL;DEBUG=")); // Label
+        float rawAmp = (osdata[4] >> 4 << 8 | (osdata[3] & 0x0f )<< 4 | osdata[3] >> 4);
+        unsigned short int ipower = (rawAmp /(0.27*235)*1000);
+
+        Serial.print(F(";OWL CM160;"));
+        
+        sprintf(pbuffer, "AMP=%f;", rawAmp);
+        Serial.print( pbuffer );
+
+        sprintf(pbuffer, "PWR=%d;", ipower);
+        Serial.print( pbuffer );
+
         PrintHex8( osdata, 13);
         Serial.println(";");  
       }
+      // ==================================================================================
+      // 0x628* Power meter: OWL CM180
       // ==================================================================================
       // OSV3 6284 3C 7801 D0 
       // OSV3 6280 3C 2801 A0A8BA05 00 00 ?? ?? ?? 
