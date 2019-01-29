@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\Users\\vladimir\\.platformio\\penv\\Scripts;C:\\Users\\vladimir\\.platformio\\penv;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\GitExtensions\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\MySQL\\MySQL Server\\bin;C:\\Users\\vladimir\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\vladimir\\.dotnet\\tools;C:\\Users\\vladimir\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\vladimir\\AppData\\Roaming\\npm;C:\\windows\\system32;C:\\windows;C:\\windows\\System32\\Wbem;C:\\windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\GitExtensions\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\nodejs\\;C:\\Program Files (x86)\\MySQL\\MySQL Server\\bin;C:\\Users\\vladimir\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\vladimir\\.dotnet\\tools;C:\\Users\\vladimir\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\vladimir\\AppData\\Roaming\\npm",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}

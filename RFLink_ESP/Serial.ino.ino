@@ -2,34 +2,33 @@
 // ****************************************************************************************
 // LEARNING_MODE
 // ****************************************************************************************
-String Learning_Modes_Text = "\
------  Learning_Modes  -----\n\
-0 : Production Mode\n\
-1 : Real Learning Mode\n\
-2 : one detection  + statistics\n\
-3 : all detections + statistics\n\
-4 : display pulstime\n\
-5 : display pulstime rounded at 30 usec\n\
-6 : Statistics, Binairy and Hex Results\n\
-7 : Statistics followed, by normal detection\n\
-8 : Transmit a predefined sequence\n\
-9 : same as 8, but indefinitly" ;
+String Learning_Modes_Text = 
+"-----  Learning_Modes  -----\n"
+"0 : Production Mode\n"
+"1 : Real Learning Mode\n"
+"2 : one detection  + statistics\n"
+"3 : all detections + statistics\n"
+"4 : display pulstime\n"
+"5 : display pulstime rounded at 30 usec\n"
+"6 : Statistics, Binairy and Hex Results\n"
+"7 : Statistics followed, by normal detection\n"
+"8 : Transmit a predefined sequence\n"
+"9 : same as 8, but indefinitly" ;
 
-String Commands_Text = "\n\
-10;LIST;          // list all commands\n\
-10;PING;          // return PONG\n\
-10;REBOOT;        // reboot RFLink\n\
-10;VERSION;       // displays version information\n\
-10;RF_Command;    // Send an RF package\n\
-10;DEBUG=x;       // Enter Learning/Debug Mode\n\
-12;Name;ID;       // In Learning_Mode=1 add this device\n\
-X                 // In Learning_Mode=1 add the last seen Device\n\
-19;DIR;           // Directory of the file-system\n\
-19;DUMP;Filename; // Print the content of the file\n\
-19:DEL;Filename;  // Delete the file\n\
-19:CLEAR;         // Delete all registered Devices\n\
-11;<LINE>         // Complete <LINE> is echoed" ;
-
+String Commands_Text = "\n"
+"10;LIST;          // list all commands\n"
+"10;PING;          // return PONG\n"
+"10;REBOOT;        // reboot RFLink\n"
+"10;VERSION;       // displays version information\n"
+"10;RF_Command;    // Send an RF package\n"
+"10;DEBUG=x;       // Enter Learning/Debug Mode\n"
+"12;Name;ID;       // In Learning_Mode=1 add this device\n"
+"X                 // In Learning_Mode=1 add the last seen Device\n"
+"19;DIR;           // Directory of the file-system\n"
+"19;DUMP;Filename; // Print the content of the file\n"
+"19:DEL;Filename;  // Delete the file\n"
+"19:CLEAR;         // Delete all registered Devices\n"
+"11;<LINE>         // Complete <LINE> is echoed" ;
 
 // ***********************************************************************************
 // ***********************************************************************************
