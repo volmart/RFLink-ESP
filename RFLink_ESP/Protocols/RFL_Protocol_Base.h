@@ -69,6 +69,10 @@ Name      ID      Switch   CMD     extra
 bool Send_Message ( String Name, unsigned long Id, unsigned long Switch, String On_Off, String Extra="" ) {
   if ( Unknown_Device ( pbuffer ) ) return false ;
 
+  // **********************************************************  
+  // Send an MQTT Message
+  //      ha/from_HA/ev1527_005df     S02
+  // **********************************************************  
   if ( Home_Automation == "MQTT" ) {
     String Topic = "ha/from_RFLink/" + Name + "_" ;
     sprintf ( pbuffer, "%05X", Id ) ;
@@ -82,10 +86,6 @@ bool Send_Message ( String Name, unsigned long Id, unsigned long Switch, String 
     
     MQTT_Client.publish ( Topic.c_str(), Payload.c_str() );
   }
-  // **********************************************************  
-  // Send an MQTT Message
-  //      ha/from_HA/ev1527_005df     S02
-  // **********************************************************  
   else {
     sprintf ( pbuffer, "%s;ID=%05X;", Name.c_str(), Id ) ; 
     

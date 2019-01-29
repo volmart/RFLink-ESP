@@ -158,15 +158,17 @@ boolean FetchSignal () {
   if ( ( RawCodeLength >= MIN_RAW_PULSES ) && 
        ( RawCodeLength <= MAX_RAW_PULSES ) &&
        ( RawSignal.Min > 150 ) &&
-       ( RawSignal.Max < 3000 ) ) {
-    RawSignal.Mean = RawSignal.Mean / ( RawCodeLength - 3 ) ;
-    RawSignal.Number   = RawCodeLength-1 ;            // Number of received pulse times (pulsen *2)
-    RawSignal.Pulses [ RawSignal.Number + 1 ] = 0 ;   // Last element contains the timeout. 
-    RawSignal.Time = millis() ;                       // Time the RF packet was received (to keep track of retransmits
-//Serial.print ( "D" ) ;
-//Serial.print ( RawCodeLength ) ;
-    return true ;
-  } 
+       ( RawSignal.Max < 3000 ) ) 
+    {
+      RawSignal.Repeats=0;                            // no repeats
+      RawSignal.Mean = RawSignal.Mean / ( RawCodeLength - 3 ) ;
+      RawSignal.Number   = RawCodeLength-1 ;            // Number of received pulse times (pulsen *2)
+      RawSignal.Pulses [ RawSignal.Number + 1 ] = 0 ;   // Last element contains the timeout. 
+      RawSignal.Time = millis() ;                       // Time the RF packet was received (to keep track of retransmits
+      //Serial.print ( "D" ) ;
+      //Serial.print ( RawCodeLength ) ;
+      return true;
+    }
 
   // ************************************************************
   // anders opnieuw beginnen

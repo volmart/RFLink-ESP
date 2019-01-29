@@ -128,9 +128,7 @@ class _RFL_Protocol_EV1527 : public _RFL_Protocol_BaseClass {
       PKSequenceNumber += 1 ;
       return true;
       */
-      return Send_Message ( Device, Id, Switch, "ON" ) ;
-      
-      
+      return Send_Message ( Device, Id, Switch, "ON" ) ;      
     }
     
     
@@ -189,8 +187,6 @@ class _RFL_Protocol_EV1527 : public _RFL_Protocol_BaseClass {
 //  private:
 //    int  Count = 0 ;  
 //    bool Last_Floating ;
- 
-    
 };
 #endif
 

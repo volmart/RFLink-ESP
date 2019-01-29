@@ -44,11 +44,12 @@ struct RawSignalStruct {                 // Raw signal variabelen places in a st
   int           Number ;                 // Number of pulses, times two as every pulse has a mark and a space.
   int           Min    ;
   int           Max    ;
+  bool          Repeats;                 // Number of re-transmits on transmit actions
   long          Mean   ;
   unsigned long Time   ;                 // Timestamp indicating when the signal was received (millis())
   int Pulses [ RAW_BUFFER_SIZE + 2 ] ;   // Table with the measured pulses in microseconds divided by RawSignal.Multiply. (halves RAM usage)
                                          // First pulse is located in element 1. Element 0 is used for special purposes, like signalling the use of a specific plugin
-} RawSignal= { 0, 0, 0, 0, 0L };
+} RawSignal= { 0, 0, 0, 0, 0, false, 0L };
 //} RawSignal={0,0,0,0,0,0L};
 
 unsigned long Last_BitStream      = 0L    ;  // holds the bitstream value for some plugins to identify RF repeats
@@ -200,6 +201,7 @@ void setup() {
   RFL_Protocols.Add ( new _RFL_Protocol_KAKU             () ) ;  
   RFL_Protocols.Add ( new _RFL_Protocol_EV1527           () ) ;  
   RFL_Protocols.Add ( new _RFL_Protocol_Paget_Door_Chime () ) ;  
+  RFL_Protocols.Add ( new _RFL_Protocol_Oregon           () ) ;  
   RFL_Protocols.setup () ;
   // ************************************************************************
 

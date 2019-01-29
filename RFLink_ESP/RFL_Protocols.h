@@ -36,6 +36,7 @@ unsigned long HexString_2_Long ( String HexString ) {
 #include "Protocols/RFL_Protocol_EV1527.h"
 #include "Protocols/RFL_Protocol_KAKU.h"
 #include "Protocols/RFL_Protocol_Paget_Door_Chime.h"
+#include "Protocols/RFL_Protocol_Oregon.h"
 
 
 // *************************************************************************
